@@ -1,4 +1,5 @@
 @extends ('master')
+@section('title',' Hasil Kuisioner ')
 @section('konten')
         <!-- Blog Post -->
         <div class="container">

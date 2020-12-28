@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 
@@ -20,6 +20,7 @@ Route::get('/home2', 'WebController@home');
 Route::get('/kuesioner', 'KuesionerController@kuesioner')->name('kuesioner');
 Route::get('/hasilkuesioner', 'KuesionerController@hasilkuesioner')->name('hasilkuesioner');
 Route::post('/createkuesioner','KuesionerController@createkuesioner')->name('createkuesioner');
+Route::get('/hasilkuesioner1','KuesionerController@hasilkuesioner1')->name('hasilkuesioner1');
 
 Auth::routes();
 

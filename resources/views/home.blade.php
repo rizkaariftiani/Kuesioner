@@ -1,5 +1,5 @@
 @extends('master')
-
+@section('title',' Home ')
 @section('konten')
 <br>
     <div class="row">

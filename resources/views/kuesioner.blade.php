@@ -1,4 +1,5 @@
 @extends('master')
+@section('title',' Kuisioner ')
 @section('konten')
 <!-- Features Section -->
 <div class="container">

@@ -17,12 +17,19 @@ class KuesionerController extends Controller
         $this->middleware('auth');
 
     }
+
+    public function hasilkuesioner1(){
+        return view('hasilkuesioner1');
+        $this->middleware('auth');
+    }
+
+
     public function hasilkuesioner(){
         $kuesioner = Kuesioner::all();
         return view('hasilkuesioner',['kuesioner'=> $kuesioner]);
 
         $this->middleware(function($request, $next){
-           if(Gate::allows('manage-articles')) return $next($request);
+           if(Gate::allows('hasilkuesioner-admin')) return $next($request);
            abort(403, 'Anda tidak memiliki cukup hak akses');
        });
 
@@ -39,10 +46,10 @@ class KuesionerController extends Controller
             'jwb4' => $request->jwb4,
             'jwb5'=>$request->jwb5
         ]); 
-        return redirect('/hasilkuesioner');      
+        return redirect('/hasilkuesioner1');      
 
         $this->middleware(function($request, $next){
-           if(Gate::allows('manage-articles')) return $next($request);
+           if(Gate::allows('hasilkuesioner-admin')) return $next($request);
            abort(403, 'Anda tidak memiliki cukup hak akses');
        });
 
